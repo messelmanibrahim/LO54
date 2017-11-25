@@ -1,0 +1,22 @@
+projet LO54
+
+  --> specification des besoins
+  --> planning previsionnel
+  --> analyse et conception
+		--> definition des fonctionnalites
+		--> modelisation 
+		--> Maquettage
+  --> développement et tests unitaires ou fonctionnalites ( inscription -- recherche)
+	--> Base de donnée
+	--> DAO
+	--> Creation des services
+	--> Creation des UIs
+	--> Integration
+  --> Intégration de la technologie jax-rs pour la fonctionnalite de recherche
+	--> Apprendre Jax-RS
+	--> Creation des service Jax-RX
+	--> Integration des Jax-RS
+  --> test global	
+  --> documentation technique UML ( dossier de conception ***- dossier de realisation - dossier de specification -- dossier dimplementation -  guide utilisateur ***)
+  --> creation d'un installeur .exe 
+  --> soutenance et correction
