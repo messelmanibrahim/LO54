@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="fr.utbm.core.entity.CourseSession" table="course_session"/>
+    <id name="id" column="id">
+        <generator class="identity"/>          
+    </id>
+    <property name="start" column="start"></property>
+    <property name="end" column="end"></property>
+    <many-to-one name="location" column="location_id" lazy = "false" />
+    <many-to-one name="course" column="course_code" lazy = "false" />
+</hibernate-mapping>

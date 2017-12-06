@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="fr.utbm.core.entity.Client" table="client">
+        <id name="id" column="id">
+            <generator class="identity"/>          
+        </id>
+        <property name="lastname" column="lastname"/>
+        <property name="firstname" column="firstname"/>
+        <property name="address" column="address"/>
+        <property name="phone" column="phone"/>
+        <property name="email" column="email"/>
+        <many-to-one name="session" column="session_id" lazy = "false" not-null="true" />
+    </class>
+</hibernate-mapping>
