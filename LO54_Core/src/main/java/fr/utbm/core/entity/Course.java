@@ -3,7 +3,7 @@ package fr.utbm.core.entity;
 
 import java.util.List;
 
-class Course {
+public class Course {
     private String code;
     private String title;
     private List<CourseSession> courseSessions;

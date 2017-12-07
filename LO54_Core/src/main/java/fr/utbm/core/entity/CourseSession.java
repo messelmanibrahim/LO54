@@ -1,13 +1,10 @@
 
 package fr.utbm.core.entity;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import org.json.JSONException;
-import org.json.JSONObject;
 
-class CourseSession {
+public class CourseSession {
     private int id;
     private Date start;
     private Date end;
