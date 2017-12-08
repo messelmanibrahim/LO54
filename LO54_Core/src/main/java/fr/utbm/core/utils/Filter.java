@@ -8,7 +8,11 @@ public class Filter {
     private Date date;
     private String city;
     
-    public Filter(){}
+    public Filter(){
+        this.code=null;
+        this.date=null;
+        this.city=null;
+    }
     
     public Filter(String code,  Date date, String city){
         this.code=code;
