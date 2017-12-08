@@ -16,7 +16,6 @@ public class Main {
     public static void main(String[] args) {
         CourseSessionDao cs = new CourseSessionDao();
         Filter f = new Filter();
-        /*
         f.setCity("Paris");
         f.setCode("LO43");
         SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
@@ -25,7 +24,6 @@ public class Main {
         } catch (ParseException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        */
         List<CourseSession> courseSessions = cs.getCourseSessionList(f);
         System.out.println("List:"+courseSessions.size());
     }
