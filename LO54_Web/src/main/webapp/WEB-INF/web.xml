@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-	 version="3.1">
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>CourseSessionServlet</servlet-name>
+        <servlet-class>fr.utbm.lo54.web.controller.CourseSessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CourseSessionServlet</servlet-name>
+        <url-pattern>/CourseSession</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>CourseSession</welcome-file>
+    </welcome-file-list>
     <session-config>
         <session-timeout>
             30
