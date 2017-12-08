@@ -8,10 +8,6 @@ import java.util.List;
 
 public class CourseSessionService {
     
-    public List<CourseSession> getList() {
-        CourseSessionDao dao = new CourseSessionDao();
-        return dao.getCourseSessionList(new Filter());
-    }
     public List<CourseSession> getList(Filter filter) {
         CourseSessionDao dao = new CourseSessionDao();
         return dao.getCourseSessionList(filter);

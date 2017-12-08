@@ -11,19 +11,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 public class CourseSessionDao {
-    public List<CourseSession> getCourseSessionList(){
-        List<CourseSession> sessionList = new ArrayList<>();
-        Session session = HibernateUtil.getSessionFactory().openSession();
-
-        try {
-            Query query = session.createQuery("from CourseSession");         
-            sessionList.addAll(query.list());
-            session.close();
-        } catch (HibernateException e) {
-            e.printStackTrace();
-        }
-        return sessionList;
-    }
+    
     public List<CourseSession> getCourseSessionList(Filter filter){
         List<CourseSession> sessionList = new ArrayList<>();
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -31,12 +19,18 @@ public class CourseSessionDao {
         try {
             boolean b = false;
             Query query;
-            String str = "from CourseSession CS where ";
+            String str = "from CourseSession CS";
             if (filter.getCode() != null){
+                if (!b){
+                    str += " Where ";
+                }
                 str += "CS.course.code = :courseCode";
                 b = true;
             }
             if(filter.getCity()!= null){
+                if (!b){
+                    str += " Where ";
+                }
                 if (b){
                     str += " AND ";
                 }
@@ -44,6 +38,9 @@ public class CourseSessionDao {
                 b=true;
             }
             if(filter.getDate()!= null){
+                if (!b){
+                    str += " Where ";
+                }
                 if (b){
                     str += " AND ";
                 }
