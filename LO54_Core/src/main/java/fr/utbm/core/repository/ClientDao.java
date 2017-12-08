@@ -7,7 +7,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
 public class ClientDao {
-    public void signUp(Client client) {
+    public void inscribe(Client client) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             session.beginTransaction();

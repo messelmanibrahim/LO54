@@ -57,9 +57,12 @@ public class CourseSessionDao {
                 query.setParameter("date", filter.getDate());
             }           
             sessionList.addAll(query.list());
-            session.close();
         } catch (HibernateException e) {
             e.printStackTrace();
+        }finally {
+            if (session != null) {
+                session.close();
+            }
         }
         return sessionList;
     }
