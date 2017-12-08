@@ -61,40 +61,48 @@ public class CourseSessionServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Course c = new Course("BD51", "bati5");
-        CourseSession cs1 = new CourseSession();
-        CourseSession cs2 = new CourseSession();
-        CourseSession cs3 = new CourseSession();
-        
-        cs1.setCourse(c);
-        cs2.setCourse(c);
-        cs3.setCourse(c);
-        
-        List<CourseSession> list = new ArrayList<CourseSession>();
-        list.add(cs1);
-        list.add(cs2);
-        list.add(cs3);
-        
-        List<Location> locationList = new ArrayList<Location>();
-        Location l1 = new Location();
-        Location l2 = new Location();
-        Location l3 = new Location();
-        
-        l1.setCity("Belfort");
-        l2.setCity("Paris");
-        l3.setCity("Strasbourg");
-        
-        l1.setId(1);
-        l2.setId(2);
-        l3.setId(3);
-        
-        locationList.add(l1);
-        locationList.add(l2);
-        locationList.add(l3);
-        
-        request.setAttribute("Locations", locationList);
-        request.setAttribute("Courses", list);
-        getServletContext().getRequestDispatcher("/WEB-INF/views/CourseSession.jsp").forward(request, response);
+//        Manual way for test
+//        Course c = new Course("BD51", "bati5");
+//        CourseSession cs1 = new CourseSession();
+//        CourseSession cs2 = new CourseSession();
+//        CourseSession cs3 = new CourseSession();
+//        
+//        cs1.setId(1);
+//        cs2.setId(2);
+//        cs.setId(3);
+//        
+//        cs1.setCourse(c);
+//        cs2.setCourse(c);
+//        cs3.setCourse(c);
+//        
+//        List<CourseSession> list = new ArrayList<CourseSession>();
+//        list.add(cs1);
+//        list.add(cs2);
+//        list.add(cs3);
+//        
+//        List<Location> locationList = new ArrayList<Location>();
+//        Location l1 = new Location();
+//        Location l2 = new Location();
+//        Location l3 = new Location();
+//        
+//        l1.setCity("Belfort");
+//        l2.setCity("Paris");
+//        l3.setCity("Strasbourg");
+//        
+//        l1.setId(1);
+//        l2.setId(2);
+//        l3.setId(3);
+//        
+//        locationList.add(l1);
+//        locationList.add(l2);
+//        locationList.add(l3);
+//        
+//        request.setAttribute("Locations", locationList);
+//        request.setAttribute("Courses", list);
+//        getServletContext().getRequestDispatcher("/WEB-INF/views/CourseSession.jsp").forward(request, response);
+/******************using Filter and services***************/
+    
+    
     }
 
     /**
