@@ -1,7 +1,7 @@
 
 package fr.utbm.core.entity;
 
-class Location {
+public class Location {
     private int id;
     private String city;
     

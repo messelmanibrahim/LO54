@@ -6,29 +6,63 @@ import fr.utbm.core.utils.Filter;
 import fr.utbm.core.utils.HibernateUtil;
 import java.util.ArrayList;
 import java.util.List;
-import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 
 public class CourseSessionDao {
+    public List<CourseSession> getCourseSessionList(){
+        List<CourseSession> sessionList = new ArrayList<>();
+        Session session = HibernateUtil.getSessionFactory().openSession();
+
+        try {
+            Query query = session.createQuery("from CourseSession");         
+            sessionList.addAll(query.list());
+            session.close();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        }
+        return sessionList;
+    }
     public List<CourseSession> getCourseSessionList(Filter filter){
         List<CourseSession> sessionList = new ArrayList<>();
         Session session = HibernateUtil.getSessionFactory().openSession();
 
         try {
-                Criteria courseSessionCrit = session.createCriteria(CourseSession.class);
-                /*
-                for(SessionWhereValuable key : where.getFilters().keySet())
-                        courseSessionCrit.add(
-                                        SessionWhereToCriteriaValuable.valueOf(
-                                                        key.name()).toRestriction(
-                                                                        key, where.getFilters().get(key)
-                                                                        )
-                        );*/
-                sessionList.addAll(courseSessionCrit.list());
-                session.close();
+            boolean b = false;
+            Query query;
+            String str = "from CourseSession CS where ";
+            if (filter.getCode() != null){
+                str += "CS.course.code = :courseCode";
+                b = true;
+            }
+            if(filter.getCity()!= null){
+                if (b){
+                    str += " AND ";
+                }
+                str += "CS.location.city = :city";
+                b=true;
+            }
+            if(filter.getDate()!= null){
+                if (b){
+                    str += " AND ";
+                }
+                str += ":date Between CS.start And CS.end";
+            }
+            query = session.createQuery(str);
+            if (filter.getCode() != null){
+                query.setParameter("courseCode", filter.getCode());
+            }
+            if(filter.getCity() != null){
+                query.setParameter("city", filter.getCity());
+            }
+             if(filter.getDate()!= null){
+                query.setParameter("date", filter.getDate());
+            }           
+            sessionList.addAll(query.list());
+            session.close();
         } catch (HibernateException e) {
-                e.printStackTrace();
+            e.printStackTrace();
         }
         return sessionList;
     }

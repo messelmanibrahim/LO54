@@ -8,6 +8,8 @@ public class Course {
     private String title;
     private List<CourseSession> courseSessions;
     
+    public Course(){}
+    
     public Course(String code, String title) {
         this.code = code;
         this.title = title;

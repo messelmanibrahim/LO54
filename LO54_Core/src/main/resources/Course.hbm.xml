@@ -2,13 +2,14 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-  <class name="fr.utbm.core.entity.Course" table="course"/>
-  <id name="code" column="code"></id>
-  <property name="title" column="title"/>
-  <bag name="courseSessions" table="course_session" lazy="false">
-    <key>
-       <column name="course_code" not-null="true"></column>
-    </key>
-    <one-to-many class="fr.utbm.core.entity.CourseSession"></one-to-many>
-  </bag>
+  <class name="fr.utbm.core.entity.Course" table="course">
+    <id name="code" column="code"></id>
+    <property name="title" column="title"></property>
+    <bag name="courseSessions" table="course_session" lazy="false">
+      <key>
+         <column name="course_code" not-null="true"></column>
+      </key>
+      <one-to-many class="fr.utbm.core.entity.CourseSession"></one-to-many>
+    </bag>
+  </class>
 </hibernate-mapping>
