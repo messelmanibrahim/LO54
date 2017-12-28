@@ -36,7 +36,7 @@ public class SignUpResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public void putJson(String content) {
+    public void postJson(String content) {
         try {
             JSONObject jo = new JSONObject(content);
             String lastname = jo.getString("lastname");
