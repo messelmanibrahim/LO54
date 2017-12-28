@@ -4,6 +4,10 @@
         <servlet-name>CourseSessionServlet</servlet-name>
         <servlet-class>fr.utbm.lo54.web.controller.CourseSessionServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SignUpServlet</servlet-name>
+        <servlet-class>fr.utbm.lo54.web.controller.SignUpServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CourseSessionServlet</servlet-name>
         <url-pattern>/CourseSession</url-pattern>
@@ -11,6 +15,10 @@
     <welcome-file-list>
         <welcome-file>CourseSession</welcome-file>
     </welcome-file-list>
+    <servlet-mapping>
+        <servlet-name>SignUpServlet</servlet-name>
+        <url-pattern>/SignUp</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
