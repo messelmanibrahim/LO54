@@ -10,6 +10,42 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" language="java">
         <title>Formation en ligne</title>
+        <script>
+            function register()
+            {
+                // Update a user
+                var url = "http://localhost:8080/LO54_Web/request/signup";
+
+                var data = {};
+                data.lastname = document.getElementById("lastname").value;
+                data.firstname = document.getElementById("firstname").value;
+                data.address = document.getElementById("address").value;
+                data.phone = document.getElementById("phone").value;
+                data.email = document.getElementById("email").value;
+                data.sessionid = getQueryString('session');
+                var json = JSON.stringify(data);
+                var xhr = new XMLHttpRequest();
+                xhr.open("PUT", url, true);
+                xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+                xhr.send(json);
+                /*
+                xhr.onload = function () {
+                    var users = JSON.parse(xhr.responseText);
+                    if (xhr.readyState == 4 && xhr.status == "200") {
+                            console.table(users);
+                    } else {
+                            console.error(users);
+                    }
+                }
+                */
+            };
+            var getQueryString = function ( field, url ) {
+                var href = url ? url : window.location.href;
+                var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
+                var string = reg.exec(href);
+                return string ? string[1] : null;
+            };
+        </script>
     </head>
     <body>
         <a href="${pageContext.request.contextPath}/CourseSession">
@@ -19,15 +55,14 @@
         
         <div class='login'>
             <h2>Register</h2>
-            <form action="SuccessInscription" method="post" id="login"><br/>
-            <input name='lastname' placeholder='Lastname' type='text' required=""><br/>
-            <input name='firstname' placeholder='Firstname' type='text' required=""><br/>
-            <input name='address' placeholder='Address' type='text' required=""><br/>
-            <input name='phone' placeholder='Phone' type='text' required=""><br/>
-            <input name='email' placeholder='Email' type='text' required=""><br/>
-            <input type="hidden" name="session" value="${session}"><br/>
+            <form  onsubmit="register()" id="login"><br/>
+            <input name='lastname' id="lastname" placeholder='Lastname' type='text' required="">
+            <input name='firstname' id="firstname" placeholder='Firstname' type='text' required="">
+            <input name='address'  id="address" placeholder='Address' type='text' required="">
+            <input name='phone' id="phone" placeholder='Phone' type='text' required="">
+            <input name='email'  id="email" placeholder='Email' type='text' required="">
+            <input type='submit' value='Register'>
             </form>
-            <input type='submit' form="login" value='Register'>
         </br>
         </br>
         </br>

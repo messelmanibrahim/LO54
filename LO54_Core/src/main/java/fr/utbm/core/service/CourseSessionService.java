@@ -12,4 +12,8 @@ public class CourseSessionService {
         CourseSessionDao dao = new CourseSessionDao();
         return dao.getCourseSessionList(filter);
     }
+    public CourseSession getCourseSessionById(int coid){
+        CourseSessionDao dao = new CourseSessionDao();
+        return dao.getCourseSessionByID(coid);
+    }
 }

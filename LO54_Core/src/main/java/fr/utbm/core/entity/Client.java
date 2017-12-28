@@ -1,6 +1,11 @@
 
 package fr.utbm.core.entity;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Client {
     private int id;
     private String lastname;

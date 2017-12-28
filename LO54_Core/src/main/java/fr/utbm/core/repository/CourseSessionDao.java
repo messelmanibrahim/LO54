@@ -66,4 +66,14 @@ public class CourseSessionDao {
         }
         return sessionList;
     }
+    
+    public CourseSession getCourseSessionByID(int coid) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        String str = "from CourseSession CS Where CS.id = :cid";
+        Query query = session.createQuery(str);
+        query.setParameter("cid", coid);
+        List<CourseSession> sessionList = new ArrayList<>();
+        sessionList.addAll(query.list());
+        return sessionList.get(0);
+    }
 }
