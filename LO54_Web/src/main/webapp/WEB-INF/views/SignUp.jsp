@@ -25,7 +25,7 @@
                 data.sessionid = getQueryString('session');
                 var json = JSON.stringify(data);
                 var xhr = new XMLHttpRequest();
-                xhr.open("PUT", url, true);
+                xhr.open("POST", url, true);
                 xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
                 xhr.send(json);
                 /*
