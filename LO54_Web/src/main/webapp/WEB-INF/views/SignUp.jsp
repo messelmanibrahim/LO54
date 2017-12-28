@@ -55,13 +55,13 @@
         
         <div class='login'>
             <h2>Register</h2>
-            <form  onsubmit="register()" id="login"><br/>
+            <form   id="login"><br/>
             <input name='lastname' id="lastname" placeholder='Lastname' type='text' required="">
             <input name='firstname' id="firstname" placeholder='Firstname' type='text' required="">
             <input name='address'  id="address" placeholder='Address' type='text' required="">
             <input name='phone' id="phone" placeholder='Phone' type='text' required="">
             <input name='email'  id="email" placeholder='Email' type='text' required="">
-            <input type='submit' value='Register'>
+            <button type="button" onclick="register()" >Register</button>
             </form>
         </br>
         </br>
