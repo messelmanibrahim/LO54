@@ -1,0 +1,92 @@
+#data-table {
+    margin: 50px auto;
+    text-align: center;
+}
+
+#data-table .courseSession {
+    font: 12px 'Lucida Sans', 'trebuchet MS', Arial, Helvetica;
+    text-shadow: 0 1px rgba(255,255,255,.8);        
+    background: #fff;      
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 20px;
+    width: 180px; /* plan width = 180 + 20 + 20 + 1 + 1 = 222px */      
+    float: left;
+    position: relative;
+        margin: 15px
+
+}
+
+#data-table h3 {
+    font-size: 20px;
+    font-weight: normal;
+    padding: 20px;
+    margin: -20px -20px 50px -20px;
+    background-color: #eee;
+    background-image: linear-gradient(#fff, #eee);
+}
+
+
+#data-table h3 span {
+    display: block;
+    font: bold 25px/100px Georgia, Serif;
+    color: #777;
+    background: #fff;
+    border: 5px solid #fff;
+    height: 100px;
+    width: 100px;
+    margin: 10px auto -65px;
+    border-radius: 100px;
+    box-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;
+}
+
+#data-table ul {
+    margin: 20px 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+#data-table li {
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+}
+    
+#data-table .signup {
+    position: relative;
+    padding: 8px 20px;
+    margin: 20px 0 0 0;  
+    color: #fff;
+    font: bold 14px Arial, Helvetica;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;       
+    background-color: aqua;
+    background-image: linear-gradient(aquamarine,darkcyan);
+    border-radius: 3px;     
+    text-shadow: 0 1px 0 rgba(0,0,0,.3);        
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 2px 0 rgba(0, 0, 0, .7);
+}
+
+#data-table .signup:hover {
+    background-color: aqua;
+    background-image: linear-gradient(darkcyan, aquamarine); 
+}
+
+#data-table .signup:active, #pricing-table .signup:focus {
+    background: aqua;       
+    top: 2px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .7) inset; 
+}
+
+.clear:before, .clear:after {
+  content:"";
+  display:table
+}
+
+.clear:after {
+  clear:both
+}
+
+.clear {
+  zoom:1
+}   
