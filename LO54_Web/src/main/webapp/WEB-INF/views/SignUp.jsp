@@ -24,7 +24,7 @@
                     return ;
                 }
                 // Update a user
-                var url = "http://localhost:8080/LO54_Web/request/signup";
+                var url = "${pageContext.request.contextPath}/request/signup";
 
                 var data = {};
                 data.lastname = document.getElementById("lastname").value;
@@ -38,6 +38,8 @@
                 xhr.open("POST", url, true);
                 xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
                 xhr.send(json);
+                alert("Registered !")
+                window.location.href = "${pageContext.request.contextPath}";
             };
             var getQueryString = function ( field, url ) {
                 var href = url ? url : window.location.href;
@@ -94,6 +96,7 @@
                 </div>
         </div>
         <div class="col-sm-4" ></div>
+        
         <footer>
             <div class="container">
               <div class="row">
