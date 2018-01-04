@@ -36,7 +36,7 @@ insert into course_session(start,end,location_id,course_code) values('2018-04-05
 -- ************ Clients ***************
 
 INSERT INTO client(LASTNAME, FIRSTNAME, ADDRESS, PHONE, EMAIL, SESSION_ID) 
-VALUES ("YASSINE", "Mohamad", "08 Rue Michelet 90000 Belfort", "06 12 34 56 78", "mohamad.yassine@utbm.fr", 1);
+VALUES ("YASSINE", "Mohamad", "90000 Belfort", "06 12 34 56 78", "mohamad.yassine@utbm.fr", 1);
 
 INSERT INTO client(LASTNAME, FIRSTNAME, ADDRESS, PHONE, EMAIL, SESSION_ID) 
-VALUES ("MESSEKMANI", "Ibrahim", "06 Rue De Madrid 90000 Belfort", "07 45 65 87 21","ibrahim.messelmani@utbm.fr.fr", 1);
+VALUES ("MESSELMANI", "Ibrahim", "90000 Belfort", "07 45 65 87 21","ibrahim.messelmani@utbm.fr", 1);
